@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recruit Calendar - 공공기관 채용캘린더</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>📅 Recruit Calendar <small>공공기관 채용캘린더</small></h1>
+  <input id="search" type="search" placeholder="기관명 / 공고명 검색">
+</header>
+
+<main>
+  <section class="filters">
+    <div class="chips" id="typeChips"></div>
+    <div class="chips" id="jobChips"></div>
+  </section>
+
+  <div class="layout">
+    <section class="calendar">
+      <div class="cal-head">
+        <button id="prev" aria-label="이전 달">‹</button>
+        <h2 id="monthTitle"></h2>
+        <button id="next" aria-label="다음 달">›</button>
+        <button id="today">오늘</button>
+      </div>
+      <div class="grid weekdays"><span class="sun">일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span class="sat">토</span></div>
+      <div class="grid days" id="days"></div>
+      <p class="legend"><span class="dot start"></span>접수 시작 <span class="dot end"></span>접수 마감 <span class="dot exam"></span>필기/면접</p>
+    </section>
+
+    <aside class="side">
+      <h3 id="sideTitle">마감 임박 공고</h3>
+      <ul id="list"></ul>
+    </aside>
+  </div>
+  <p class="notice">※ 표시된 공고는 <b>샘플 데이터</b>입니다. 실제 일정은 반드시 각 기관 공식 채용 공고(ALIO, 잡알리오 등)에서 확인하세요. 데이터는 data.js에서 수정할 수 있습니다.</p>
+</main>
+
+<div class="modal" id="modal" hidden>
+  <div class="card">
+    <button class="close" id="closeModal" aria-label="닫기">×</button>
+    <h3 id="mTitle"></h3>
+    <p id="mOrg" class="muted"></p>
+    <dl id="mBody"></dl>
+    <a id="mLink" target="_blank" rel="noopener">공고 보러가기 →</a>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
